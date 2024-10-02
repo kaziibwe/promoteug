@@ -60,7 +60,7 @@ Route::post('/get/{type}/{id}', [ReadController::class, 'get'])->name('post.get'
 });
 
 // Route::get('/v1/admin/get/{type}/{id}', [ReadController::class, 'get'])->name('{type}');
-Route::post('/v1/admin/post-all/{type}', [PostController::class, 'saveAll'])->name('{type}');
+// Route::post('/v1/admin/post-all/{type}', [PostController::class, 'saveAll'])->name('{type}');
 
 
 

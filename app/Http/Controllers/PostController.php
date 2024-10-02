@@ -25,8 +25,10 @@ class PostController extends Controller
         $this->typeService = $typeService;
     }
 
-    public function saveAll(SaveDataRequest $request,)
+
+    public function saveAll(SaveDataRequest $request,$type)
     {
+        return $request->all();
 
         // get the type this help the get the model
         $type = $this->typeService->type($request);
@@ -38,6 +40,8 @@ class PostController extends Controller
 
             $validated['image'] = $request->file('image')->store('images', 'public');
         }
+
+
 
 
         $responseData = [$validated];
@@ -52,7 +56,7 @@ class PostController extends Controller
 
             return response()->json([
                 'success' => false,
-                'error' => 'something went wrong.'
+                'error' => 'something went wrong.'.$e
             ], 500);
         }
     }

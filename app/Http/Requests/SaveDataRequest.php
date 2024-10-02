@@ -40,15 +40,12 @@ class SaveDataRequest extends FormRequest
                     'name' => 'required|string',
                     'email' => ['required', Rule::unique('admins')->ignore($id)],
                     'email' => 'required|email',
-
-
-
                     'password' => $passwordRule,
                 ];
             case 'user':  //for table users
                 return [
                     'name' => 'required|string',
-                    'image' => 'nullable',
+                    'image' => 'required',
                     'organisation_name' => 'nullable',
                     'organisation_email' => 'nullable',
                     'organisation_phone' => 'nullable',
@@ -76,13 +73,10 @@ class SaveDataRequest extends FormRequest
                     'image1' => 'nullable | required',
                     'image2' => 'nullable',
                     'image3' => 'nullable',
-
                     // 'participate' => 'required|string',
                     'format' => 'required|string',
-
                     // 'auction_type' => 'required|string',
                     'site' => 'required|string',
-
                 ];
 
             case 'AuctionType':  //for table users
@@ -114,8 +108,8 @@ class SaveDataRequest extends FormRequest
 
             case 'category':  //for table users
                 return [
-                    'image'=> 'sometimes',
-                    'name' => 'nullable|string',
+                    'hello'=> 'required',
+                    'name' => 'nullable',
                     'active' => 'nullable|string',
                     'featured' => 'nullable|string',
 
